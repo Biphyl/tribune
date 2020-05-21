@@ -14,8 +14,9 @@
 
     {% block styles %}
         {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+    
 </head>
 <body>
     {% include "navbar.html" %}

@@ -2,4 +2,29 @@
 
 {% block content %}
 {{block.super}}
+
+<div class="container">
+
+    <!-- Looping through news -->
+    {% for news_items in news %}
+
+    <div class="row">
+        <!-- Displaying News articles -->
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+            <h2 class="text-center"> {{ news_items.title }} </h2>
+        </div>
+
+        <!-- Displaying news Article image -->
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+            <img src="{{ news_items.article_image.url }}" alt="Image" class="img-responsive">
+        </div>
+    </div>
+
+        {% empty %}
+    <div class="row">
+        <h2 class="text-center"> There No News Items </h2>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
