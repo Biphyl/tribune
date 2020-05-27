@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     path(r'admin/', admin.site.urls),
-    path(r'',include('news.urls'))
+    path(r'',include('news.urls')),
+    path(r'accounts/',include('registration.backends.simple.urls')),
 ]
