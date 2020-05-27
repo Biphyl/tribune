@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'news',
     'bootstrap3',
+    'django_registration',
 ]
 
 MIDDLEWARE = [
