@@ -4,6 +4,10 @@ from django.http import HttpResponse, Http404, JsonResponse
 from .models import Article
 from .forms import NewsLetterForm
 from django.contrib.auth.decorators import login_required
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import MoringaMerch
+from .serializer import MerchSerializer
 
 # Create your views here.
 def welcome(request):
@@ -74,3 +78,10 @@ def newsletter(request):
     data = {'success': 'You have been successfully added to mailing list'}
 
     return JsonResponse(data)
+
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = MoringaMerch.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+
+        return Response(serializers.data)

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; font-src data:; object-src 'none'; form-action 'self'; block-all-mixed-content ; connect-src https://*.getpostman.com;"
+    >
+    <title>Postman</title>
+    <script src="../js/preload.js"></script>
+    <link rel='stylesheet' type='text/css' href='../js/proxyAuth.css'>
+  </head>
+  <body>
+    <div class='proxy-auth-header-container'>
+      <div class='proxy-auth-header'>
+        <span>PROXY REQUIRES AUTHENTICATION</span>
+      </div>
+    </div>
+    <div class='proxy-auth-content-container'>
+      <div class='proxy-auth-login-form'>
+        <div class='proxy-auth-user-inputs'>
+          <div class='proxy-auth-description'>
+            <span>A proxy server requires authentication for Postman to connect to web services</span>
+          </div>
+          <div class='proxy-auth-input-fields'>
+            <div class='proxy-input-field proxy-username'>
+              <input id='proxy-username-input' class='input input-box proxy-username-input' placeholder='Username' tabindex='0'/>
+            </div>
+
+            <div class='proxy-input-field proxy-password'>
+              <input  id='proxy-password-input'  class='input input-box proxy-password-input' placeholder='Password' type='password' tabindex='0'/>
+            </div>
+          </div>
+          <div class='proxy-auth-note'>
+            <span>You can always change or remove these credentials by going to Settings</span>
+          </div>
+        </div>
+      </div>
+      <div class='proxy-auth-actions'>
+        <div class='proxy-auth-buttons'>
+          <div  id='proxy-submit-button' class='btn submit-btn' tabindex='0'>Save and restart Postman</div>
+          <div  id='proxy-cancel-button' class='btn cancel-btn' tabindex='0'>Cancel</div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript' src='../js/proxyAuth.js'></script>
+  </body>
+</html>
